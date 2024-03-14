@@ -11,3 +11,22 @@ Powered by:
 ```BASH
 git clone https://github.com/RKOrtega94/challenge-abitmedia-app.git
 ```
+
+2. Configurar archivo .env
+
+    2.1. Copiar archivo .env.example
+
+    ```BASH
+    cp .env.example .env
+    ```
+
+    2.2. Reemplazar variables de entorno
+
+    ```env
+    DB_CONNECTION=YOUR_DB_DRIVER
+    DB_HOST=YOUR_DB_HOST
+    DB_PORT=YOUR_DB_PORT
+    DB_DATABASE=YOUR_DB_DATABASE_NAME
+    DB_USERNAME=YOUR_DB_USER
+    DB_PASSWORD=YOUR_DB_PASSWORD
+    ```
