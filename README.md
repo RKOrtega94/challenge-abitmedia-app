@@ -9,5 +9,5 @@ Powered by:
 1. Clonar/descargar el proyecto.
 
 ```BASH
-git clone
+git clone https://github.com/RKOrtega94/challenge-abitmedia-app.git
 ```
