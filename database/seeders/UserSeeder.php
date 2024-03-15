@@ -24,11 +24,11 @@ class UserSeeder extends Seeder
                 "email" => $this->command->ask("What is the user's email?", "test@email.com"),
                 "password" => bcrypt($this->command->ask("What is the user's password?", "password")),
             ]);
-
-            $this->command->info("Seeding users completed.");
         } else {
             $this->command->info("No users seeded.");
         }
+
+        $this->command->info("Press enter to continue...");
 
         Artisan::call('passport:client', ['--personal' => true]);
     }

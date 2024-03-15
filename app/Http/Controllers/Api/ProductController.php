@@ -87,7 +87,7 @@ class ProductController extends Controller
     function store(ProductRequest $request): JsonResponse
     {
         try {
-            $product = Product::create($request->all());
+            $product = Product::create($request->validated());
             return $this->sendResponse($product, "Product created successfully", Response::HTTP_CREATED);
         } catch (ValidationException $e) {
             return $this->sendError($e->getMessage(), $e->errors(), Response::HTTP_BAD_REQUEST);
@@ -119,7 +119,7 @@ class ProductController extends Controller
     function update(ProductRequest $request, Product $product): JsonResponse
     {
         try {
-            $product->update($request->all());
+            $product->update($request->validated());
             return $this->sendResponse($product, "Product updated successfully", Response::HTTP_OK);
         } catch (ModelNotFoundException $e) {
             return $this->sendError("Product not found", [], Response::HTTP_NOT_FOUND);

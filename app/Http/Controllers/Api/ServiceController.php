@@ -86,7 +86,7 @@ class ServiceController extends Controller
     function store(ServiceRequest $request): JsonResponse
     {
         try {
-            $service = Service::create($request->all());
+            $service = Service::create($request->validated());
             return $this->sendResponse($service, "Service created successfully", Response::HTTP_CREATED);
         } catch (ValidationException $e) {
             return $this->sendError($e->getMessage(), $e->errors(), Response::HTTP_BAD_REQUEST);
@@ -116,7 +116,7 @@ class ServiceController extends Controller
     function update(ServiceRequest $request, Service $service): JsonResponse
     {
         try {
-            $service->update($request->all());
+            $service->update($request->validated());
             return $this->sendResponse($service, "Service updated successfully", Response::HTTP_OK);
         } catch (ValidationException $e) {
             return $this->sendError($e->getMessage(), $e->errors(), Response::HTTP_BAD_REQUEST);

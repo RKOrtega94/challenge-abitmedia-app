@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
+            $table->string('serial', 100)->nullable()->unique();
+            $table->enum('platform', ['windows', 'mac']);
 
-            $table->char('seial', 100)->unique();
+            $table->enum('status', ['active', 'sold', 'inactive'])->default('active');
 
             $table->timestamps();
         });
