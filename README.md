@@ -68,7 +68,7 @@ php artisan migrate --seed
 `Si se requiere limpiar la base de datos y ejecutar las migraciones.` _`se puede agregar --seed para ejectar el semillero`_
 
 ```BASH
-php artisab migrate:fresh
+php artisan migrate:fresh
 ```
 
 _`Se sugiere utilizar el comando php artisan migrate --seed para tener informacion en la base de datos`_
