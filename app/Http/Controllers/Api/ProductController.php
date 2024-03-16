@@ -8,6 +8,7 @@ use App\Http\Resources\ProductCollectionResource;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -40,6 +41,7 @@ class ProductController extends Controller
                 Response::HTTP_OK
             );
         } catch (\Throwable $th) {
+            Log::info($th);
             return $this->sendError("Server Error", [], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }

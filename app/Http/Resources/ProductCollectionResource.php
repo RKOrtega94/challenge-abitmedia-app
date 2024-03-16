@@ -22,8 +22,8 @@ class ProductCollectionResource extends JsonResource
             'windows_price' => $this->windows_price,
             'mac_price' => $this->mac_price,
             'stock' => [
-                'windows' => $this->stock->windows_stock,
-                'mac' => $this->stock->mac_stock,
+                'windows' => $this->stock->windows_stock ?? 0,
+                'mac' => $this->stock->mac_stock ?? 0,
             ],
         ];
     }
